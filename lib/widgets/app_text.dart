@@ -14,12 +14,10 @@ class AppText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Text(
-        title,
-        style:
-            TextStyle(fontWeight: fontWeight, fontSize: fontSize, color: color),
-      ),
+    return Text(
+      title,
+      style:
+          TextStyle(fontWeight: fontWeight, fontSize: fontSize, color: color),
     );
   }
 }
