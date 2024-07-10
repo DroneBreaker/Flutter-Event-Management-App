@@ -1,19 +1,18 @@
-// import 'package:eventioo/screens/register.dart';
+import 'package:eventioo/screens/login.dart';
 import 'package:eventioo/widgets/app_text.dart';
 import 'package:eventioo/widgets/button.dart';
 import 'package:flutter/material.dart';
 
-class LoginPage extends StatefulWidget {
-  const LoginPage({super.key});
+class RegisterPage extends StatefulWidget {
+  const RegisterPage({super.key});
 
   @override
-  State<LoginPage> createState() => _LoginPageState();
+  State<RegisterPage> createState() => _RegisterPageState();
 }
 
-class _LoginPageState extends State<LoginPage> {
+class _RegisterPageState extends State<RegisterPage> {
   @override
   Widget build(BuildContext context) {
-    // precacheImage(const AssetImage("assets/login.jpg"), context);
     return SafeArea(
       child: Scaffold(
           body: Container(
@@ -26,9 +25,9 @@ class _LoginPageState extends State<LoginPage> {
           child: Column(
             children: [
               const Padding(
-                padding: EdgeInsets.only(top: 260.0),
+                padding: EdgeInsets.only(top: 160.0),
                 child: AppText(
-                  title: "LOGIN",
+                  title: "REGISTER AN ACCOUNT",
                   fontSize: 25,
                   fontWeight: FontWeight.bold,
                 ),
@@ -41,13 +40,13 @@ class _LoginPageState extends State<LoginPage> {
                 child: SizedBox(
                   child: TextFormField(
                     decoration: InputDecoration(
-                        hintText: "Email Address",
+                        hintText: "Full Name",
                         filled: true,
                         fillColor: Colors.white,
                         contentPadding: const EdgeInsets.only(top: 2, left: 20),
                         border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(15)),
-                        suffixIcon: const Icon(Icons.person)),
+                        suffixIcon: const Icon(Icons.mail)),
                   ),
                 ),
               ),
@@ -58,7 +57,39 @@ class _LoginPageState extends State<LoginPage> {
                 padding: const EdgeInsets.only(left: 40, right: 40),
                 child: TextFormField(
                   decoration: InputDecoration(
+                      hintText: "Email Address",
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: const EdgeInsets.only(top: 2, left: 20),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      suffixIcon: const Icon(Icons.mail)),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40),
+                child: TextFormField(
+                  decoration: InputDecoration(
                       hintText: "Password",
+                      filled: true,
+                      fillColor: Colors.white,
+                      contentPadding: const EdgeInsets.only(top: 2, left: 20),
+                      border: OutlineInputBorder(
+                          borderRadius: BorderRadius.circular(15)),
+                      suffixIcon: const Icon(Icons.lock)),
+                ),
+              ),
+              const SizedBox(
+                height: 30,
+              ),
+              Padding(
+                padding: const EdgeInsets.only(left: 40, right: 40),
+                child: TextFormField(
+                  decoration: InputDecoration(
+                      hintText: "Confirm password",
                       filled: true,
                       fillColor: Colors.white,
                       contentPadding: const EdgeInsets.only(top: 2, left: 20),
@@ -79,7 +110,7 @@ class _LoginPageState extends State<LoginPage> {
                   //   ),
                   // ),
                 },
-                title: "Login",
+                title: "Create an account",
                 fontSize: 17,
                 fontWeight: FontWeight.bold,
               ),
@@ -89,10 +120,14 @@ class _LoginPageState extends State<LoginPage> {
               Center(
                 child: TextButton(
                   onPressed: () {
-                    Navigator.pushNamed(context, '/register');
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) => const LoginPage()),
+                    );
                   },
                   child: const AppText(
-                    title: "Don't have an account?",
+                    title: "Already have an account?",
                     fontSize: 17,
                     color: Colors.black,
                   ),
